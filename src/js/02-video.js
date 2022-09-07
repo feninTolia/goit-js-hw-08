@@ -13,5 +13,5 @@ player.on('timeupdate', throttle(currentTimeOfVimeoHandler, 1000));
 const currentTime = localStorage.getItem('videoplayer-current-time');
 
 if (currentTime) {
-  player.setCurrentTime(currentTime);
+  player.setCurrentTime(Number(currentTime));
 }

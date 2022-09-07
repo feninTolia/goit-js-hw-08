@@ -8,10 +8,16 @@ const fillContactFormFields = () => {
   const feedbackFormStateFromLS = localStorageService.load(
     'feedback-form-state'
   );
+  if (feedbackFormStateFromLS === undefined) {
+    return;
+  }
+
+  console.log('feedbackFormStateFromLS', feedbackFormStateFromLS);
 
   for (const key in feedbackFormStateFromLS) {
     if (feedbackFormStateFromLS.hasOwnProperty(key)) {
       refs.contactForm.elements[key].value = feedbackFormStateFromLS[key];
+      feedbackFormState[key] = feedbackFormStateFromLS[key];
     }
   }
 };
