@@ -28,6 +28,10 @@ const onFormFieldInput = e => {
 
 const onFormSubmit = e => {
   e.preventDefault();
+  if (refs.contactForm.elements.email.value === '') {
+    return;
+  }
+
   const submitObject = {
     email: refs.contactForm.elements.email.value,
     message: refs.contactForm.elements.message.value,
