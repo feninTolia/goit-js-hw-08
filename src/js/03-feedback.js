@@ -12,8 +12,6 @@ const fillContactFormFields = () => {
     return;
   }
 
-  console.log('feedbackFormStateFromLS', feedbackFormStateFromLS);
-
   for (const key in feedbackFormStateFromLS) {
     if (feedbackFormStateFromLS.hasOwnProperty(key)) {
       refs.contactForm.elements[key].value = feedbackFormStateFromLS[key];
@@ -26,6 +24,7 @@ fillContactFormFields();
 
 const onFormFieldInput = e => {
   const { target } = e;
+  console.log('feedbackFormState ', feedbackFormState);
 
   feedbackFormState[target.name] = target.value;
 
